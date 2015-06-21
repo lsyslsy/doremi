@@ -4,13 +4,17 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Student implements Serializable {
-    private String studentID;
-    private String Name;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -7711512820323701935L;
+    private String studentId;
+    private String name;
     private Date birthday;
     private String schoolOn;
     private String type;
     private String gender;
-    private long schlID;
+    private long schlId;
     private Date regTime;
     private Date deregTime;
     private Date lastModified;
@@ -18,29 +22,29 @@ public class Student implements Serializable {
     /**
      * @return the studentID
      */
-    public String getStudentID() {
-        return studentID;
+    public String getStudentId() {
+        return studentId;
     }
 
     /**
      * @param studentID the studentID to set
      */
-    public void setStudentID(String studentID) {
-        this.studentID = studentID;
+    public void setStudentID(String studentId) {
+        this.studentId = studentId;
     }
 
     /**
      * @return the name
      */
     public String getName() {
-        return Name;
+        return name;
     }
 
     /**
      * @param name the name to set
      */
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     /**
@@ -102,15 +106,15 @@ public class Student implements Serializable {
     /**
      * @return the schlID
      */
-    public long getSchlID() {
-        return schlID;
+    public long getSchlId() {
+        return schlId;
     }
 
     /**
      * @param schlID the schlID to set
      */
-    public void setSchlID(long schlID) {
-        this.schlID = schlID;
+    public void setSchlId(long schlId) {
+        this.schlId = schlId;
     }
 
     /**

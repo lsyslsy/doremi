@@ -15,6 +15,8 @@
  */
 package cn.linshangyao.doremi.dao.student.impl;
 
+import java.util.List;
+
 import cn.linshangyao.doremi.dao.student.IStudentDao;
 import cn.linshangyao.doremi.model.student.Student;
 
@@ -23,16 +25,21 @@ import cn.linshangyao.doremi.model.student.Student;
  * @author yao
  * @date Jun 17, 2015
  */
-public class StudentDaoImpl implements IStudentDao {
+public class StudentDaoImpl {
 
-    public void GetAllStudents() {
+    public List<Student> GetAllStudents() {
         // TODO Auto-generated method stub
-        
+        return null;
     }
 
-    public Student GetStudentById() {
+    public Student GetStudentById(String id) {
         //StudentMapper
         return null;
+    }
+
+    public void insertStudent(Student student) {
+        // TODO Auto-generated method stub
+        
     }
 
 }

@@ -16,6 +16,8 @@
  */
 package cn.linshangyao.doremi.dao.student;
 
+import java.util.List;
+
 import cn.linshangyao.doremi.model.student.Student;
 
 /**
@@ -24,6 +26,6 @@ import cn.linshangyao.doremi.model.student.Student;
  * @date 2015年5月31日
  */
 public interface IStudentDao {
-    void GetAllStudents();
-    Student GetStudentById();
+    Student getStudentById(String id);
+    void insertStudent(Student student);
 }

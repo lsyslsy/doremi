@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace大写还是小写是一个问题 -->
+<mapper namespace="cn.linshangyao.doremi.dao.student.IStudentDao">
+
+	<resultMap type="student" id="StudentResult">
+		<id property="studentId" column="stu_id"/>
+		<result property="name" column="name"/>
+		<result property="birthday" column="birthday"/>
+		<result property="schoolOn" column="school_on"/>
+		<result property="type" column="type"/>
+		<result property="gender" column="gender"/>
+		<result property='schlId' column="schl_id"/>
+		<result property="regTime" column="reg_time"/>
+		<result property="deregTime" column="dereg_time"/>
+		<result property="lastModified" column="last_modified"/>
+	</resultMap>
+	<select id="getStudentById" parameterType="String" resultMap="StudentResult">
+		SELECT * FROM student
+		WHERE stu_id = #{studentId}
+	</select>
+	
+	<insert id="insertStudent" parameterType="student">
+		INSERT INTO student(stu_id, name, birthday)
+	</insert>
+</mapper>

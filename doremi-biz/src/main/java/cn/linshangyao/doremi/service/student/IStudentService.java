@@ -15,6 +15,12 @@
  * limitations under the License.
  */
 package cn.linshangyao.doremi.service.student;
+
+import java.util.List;
+
+
+import cn.linshangyao.doremi.model.student.Student;
+
 /**
  *
  * @author yao
@@ -22,5 +28,6 @@ package cn.linshangyao.doremi.service.student;
  */
 public interface IStudentService {
     
-    void GetAllStudents();
+    List<Student> getAllStudents();
+    Student getStudentById(String id);
 }

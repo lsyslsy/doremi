@@ -16,16 +16,21 @@
  */
 package cn.linshangyao.doremi.service.student.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.linshangyao.doremi.dao.student.IStudentDao;
+import cn.linshangyao.doremi.model.student.Student;
 import cn.linshangyao.doremi.service.student.IStudentService;
 /**
  *
  * @author yao
  * @date 2015年5月31日
  */
+@Transactional
 @Service
 public class StudentServiceImpl implements IStudentService {
     @Autowired
@@ -34,8 +39,15 @@ public class StudentServiceImpl implements IStudentService {
     /**
      * 读取所有学生
      */
-    public void GetAllStudents() {
+    public List<Student> getAllStudents() {
        
-        
+        return null;
+    }
+
+    /**
+     * 
+     */
+    public Student getStudentById(String id) {
+        return studentDao.getStudentById(id);
     }
 }

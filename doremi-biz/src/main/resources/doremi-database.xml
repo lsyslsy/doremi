@@ -1,8 +1,10 @@
- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
             http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
 	<!-- configuration details go here -->
@@ -25,12 +27,24 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="doremi_dataSource" />
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
-		<property name="mapperLocations" value="classpath*:cn/linshangyao/doremi/mappers/**/*.xml" />
+		<!-- 首字母变小写 -->
+		<property name="typeAliasesPackage" value="cn.linshangyao.doremi.model" />
+		<!-- 这也可以在mybatis-config中由mappers元素配置 -->
+		<property name="mapperLocations"
+			value="classpath*:cn/linshangyao/doremi/mappers/**/*.xml" />
 	</bean>
+
+	<!-- <bean id="studentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="cn.linshangyao.doremi.dao.student.IStudentDao"/>
+		<property name="sqlSessionFatory" ref="sqlSessionFactory"/>
+	</bean> -->
 	
 	<!-- scan for mappers and let them be autowired -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="cn.linshangyao.doremi.biz.dao" />
-    </bean>
-    <property name="typeAliasesPackage" value="cn.linshangyao.doremi.biz.model" />
+	<!-- 遵循spring autodetected bean的命名方式，变成unqualified uncapitalized的名字 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="cn.linshangyao.doremi.dao" />
+	</bean>
+	
+	
+
 </beans>
