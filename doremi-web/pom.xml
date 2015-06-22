@@ -37,9 +37,13 @@
 			<artifactId>doremi-biz</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
-		<finalName>doremi-web</finalName>
+		<finalName>doremi</finalName>
 
 
 	</build>

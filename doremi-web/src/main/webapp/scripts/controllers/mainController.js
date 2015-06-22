@@ -2,7 +2,7 @@
  * 
  */
 angular.module('doremi').config([ '$routeProvider', function($routeProvider) {
-	$routeProvider.when('/manageStudents', {
+	$routeProvider.when('/studentManage', {
 		templateUrl : 'views/student.html'
 	}).otherwise({
 		redirectTo : '/'
@@ -10,5 +10,5 @@ angular.module('doremi').config([ '$routeProvider', function($routeProvider) {
 } ])
 
 .controller('ctl', function($scope) {
-	$scope.king='fuck';
+//	$scope.king='fuck';
 });

@@ -28,4 +28,5 @@ import cn.linshangyao.doremi.model.student.Student;
 public interface IStudentDao {
     Student getStudentById(String id);
     void insertStudent(Student student);
+    List<Student> getAllStudentsBySchlId(long shlId);
 }

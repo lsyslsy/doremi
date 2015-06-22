@@ -39,9 +39,9 @@ public class StudentServiceImpl implements IStudentService {
     /**
      * 读取所有学生
      */
-    public List<Student> getAllStudents() {
+    public List<Student> getAllStudentsBySchlId(long schlId) {
        
-        return null;
+        return studentDao.getAllStudentsBySchlId(schlId);
     }
 
     /**
@@ -49,5 +49,10 @@ public class StudentServiceImpl implements IStudentService {
      */
     public Student getStudentById(String id) {
         return studentDao.getStudentById(id);
+    }
+
+    public List<Student> getAllStudents() {
+        // TODO Auto-generated method stub
+        return null;
     }
 }

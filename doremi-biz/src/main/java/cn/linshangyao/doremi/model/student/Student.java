@@ -14,7 +14,7 @@ public class Student implements Serializable {
     private String schoolOn;
     private String type;
     private String gender;
-    private long schlId;
+    private Long schlId;
     private Date regTime;
     private Date deregTime;
     private Date lastModified;

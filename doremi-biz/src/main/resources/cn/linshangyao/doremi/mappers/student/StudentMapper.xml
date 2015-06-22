@@ -22,6 +22,11 @@
 		WHERE stu_id = #{studentId}
 	</select>
 	
+	<select id="getAllStudentsBySchlId" parameterType="Long" resultMap="StudentResult">
+		SELECT * FROM student
+		WHERE schl_id = #{schlId}
+	</select>
+	
 	<insert id="insertStudent" parameterType="student">
 		INSERT INTO student(stu_id, name, birthday)
 	</insert>

@@ -18,7 +18,6 @@ package cn.linshangyao.doremi.service.student;
 
 import java.util.List;
 
-
 import cn.linshangyao.doremi.model.student.Student;
 
 /**
@@ -30,4 +29,5 @@ public interface IStudentService {
     
     List<Student> getAllStudents();
     Student getStudentById(String id);
+    public List<Student> getAllStudentsBySchlId(long schlId);
 }
